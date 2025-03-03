@@ -1,9 +1,8 @@
+use serde::Serialize;
 use std::{
     fs::{create_dir_all, remove_dir_all, remove_file},
     path::PathBuf,
 };
-
-use serde::Serialize;
 use tauri::{command, AppHandle, Manager, Runtime};
 use xcap::{Monitor, Window};
 
@@ -98,6 +97,8 @@ fn get_save_dir<R: Runtime>(app_handle: AppHandle<R>) -> Result<PathBuf, String>
         .map_err(|err| err.to_string())?
         .join("tauri-plugin-screenshots");
 
+    create_dir_all(&save_dir).map_err(|err| err.to_string())?;
+
     Ok(save_dir)
 }
 
@@ -109,8 +110,6 @@ fn get_save_path<R: Runtime>(
     let prefix = if is_window { "window" } else { "monitor" };
 
     let save_dir = get_save_dir(app_handle)?;
-
-    create_dir_all(&save_dir).map_err(|err| err.to_string())?;
 
     let save_path = save_dir.join(format!("{prefix}-{id}.png"));
 

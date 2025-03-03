@@ -12,11 +12,10 @@ exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules"]
 links = "tauri-plugin-screenshots"
 
 [dependencies]
-tauri = { version = "2.3.0" }
+tauri = { version = "2" }
 serde = "1.0"
 thiserror = "2"
 xcap = "0.3.3"
 
-
 [build-dependencies]
-tauri-plugin = { version = "2.0.4", features = ["build"] }
+tauri-plugin = { version = "2", features = ["build"] }
