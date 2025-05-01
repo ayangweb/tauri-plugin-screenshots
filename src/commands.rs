@@ -8,9 +8,12 @@ use tauri::{command, AppHandle, Manager, Runtime};
 use xcap::{Monitor, Window};
 
 #[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ScreenshotableWindow {
     pub id: u32,
     pub name: String,
+    pub title: String,
+    pub app_name: String,
 }
 
 #[derive(Debug, Serialize)]
@@ -48,7 +51,7 @@ pub async fn get_screenshotable_windows() -> Result<Vec<ScreenshotableWindow>, S
         let title = window.title().to_string();
 
         let name = if title.is_empty() || app_name.eq(&title) {
-            app_name
+            app_name.clone()
         } else {
             format!("{} - {}", app_name, title)
         };
@@ -56,6 +59,8 @@ pub async fn get_screenshotable_windows() -> Result<Vec<ScreenshotableWindow>, S
         screenshotable_windows.push(ScreenshotableWindow {
             id: window.id(),
             name,
+            title,
+            app_name,
         });
     }
 

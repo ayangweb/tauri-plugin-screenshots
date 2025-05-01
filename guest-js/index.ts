@@ -3,6 +3,8 @@ import { invoke } from "@tauri-apps/api/core";
 export interface ScreenshotableWindow {
   id: number;
   name: string;
+  title: string;
+  appName: string;
 }
 
 export interface ScreenshotableMonitor {

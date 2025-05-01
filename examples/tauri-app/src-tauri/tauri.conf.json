@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "tauri-app",
+  "productName": "tauri-plugin-screenshots-demo",
   "version": "0.1.0",
   "identifier": "com.tauri-app.app",
   "build": {
