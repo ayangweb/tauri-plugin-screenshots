@@ -4,7 +4,7 @@
 
 Get screenshots of windows and monitors.
 
-https://github.com/user-attachments/assets/0cc6e2ea-cf85-41ed-a809-078393a95c0f
+https://github.com/user-attachments/assets/3ff503d8-46e6-47d5-8f0b-d4da181514d7
 
 ## Install
 
