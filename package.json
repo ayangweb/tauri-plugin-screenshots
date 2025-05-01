@@ -1,6 +1,6 @@
 {
   "name": "tauri-plugin-screenshots-api",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": "ayangweb",
   "description": "Get screenshots of windows and monitors.",
   "keywords": [
