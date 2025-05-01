@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-screenshots"
-version = "2.1.0"
+version = "2.2.0"
 authors = [ "ayangweb" ]
 description = "Get screenshots of windows and monitors."
 repository = "https://github.com/ayangweb/tauri-plugin-screenshots"
